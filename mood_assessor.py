@@ -1,11 +1,6 @@
 import datetime
 
 def ask_current_mood():
-    """
-    1. ask the user to enter their current mood
-    2. ensure the response is valid
-    """
-
     acceptable_mood = ['happy', 'relaxed', 'apathetic', 'sad', 'angry']
     response_in_int = {'happy': 2, 'relaxed': 1, 'apathetic': 0, 'sad': -1, 'angry': -2}
     ask_user = input("Please enter your current mood: ").strip().lower()
@@ -25,10 +20,6 @@ def mood_storage(mood):
 
 
 def entered_today():
-    """
-    Checks wether a mood entry is made
-    """
-
     get_date = datetime.date.today()
     date_formatted = str(get_date)
 
@@ -45,9 +36,6 @@ def entered_today():
     return False
 
 def mood_disorder_determination():
-    """
-    Determine whether they are disorderd 
-    """
     try:
         with open('data/mood_diary.txt', 'r', encoding='utf-8') as file:
             entries = file.readlines()
@@ -84,9 +72,6 @@ def mood_disorder_determination():
         return mood_in_string[rounded_average_mood]
 
 def assess_mood():
-    """
-    output the diagnosis
-    """
     if entered_today():
         print("Sorry, you have already entered your mood today.")
         return
