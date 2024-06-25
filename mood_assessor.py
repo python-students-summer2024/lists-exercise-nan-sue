@@ -9,9 +9,6 @@ def ask_current_mood():
     return response_in_int[ask_user]
 
 def mood_storage(mood):
-    """
-    Stores in the mood_diary.txt file
-    """
     get_date = datetime.date.today()
     date_formatted = str(get_date)
 
